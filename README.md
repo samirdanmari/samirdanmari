@@ -1,8 +1,8 @@
 - 👋 Hi, I’m @samirdanmari
-- 👀 I’m interested in java swing,web-design
-- 🌱 I’m currently learning Desktop application
-- 💞️ I’m looking to collaborate on Desktop Application and front-end webdesign
-- 📫 How to reach me ...
+- 👀 I’m interested in java,Angular and GCP
+- 🌱 I’m currently learning Web application
+- 💞️ I’m looking to collaborate on Web Application and Cloud Computing
+- 📫 How to reach me ...IG@sameerdnmari, Twitter @samir_danmari
 
 <!---
 samirdanmari/samirdanmari is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.

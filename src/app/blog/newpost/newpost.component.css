@@ -1,0 +1,12 @@
+mat-card-title{
+    background-color: whitesmoke;
+    color: darkslategray;
+    text-align: center;
+    margin: 10px
+}
+mat-card-header{
+    background-color: whitesmoke;
+    color: black;
+    font-size: 20px;
+    border-radius: 1px;
+}

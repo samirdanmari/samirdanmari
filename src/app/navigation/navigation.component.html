@@ -1,0 +1,35 @@
+<!--
+    this  page contains only the navigation bar of the web App
+-->
+<div id="navigation">
+<nav class="navbar navbar-expand-lg navbar-success  shadow-2 py-4" >
+    <div class="container">
+    <a class="nav-brand" href="#" id="navbrand">{{title}}</a>
+    
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target ="#navbarCollapse"
+    aria-conrols="navbar-Collapse" aria-expanded="false" aria-label="Toggle navigation" id="navbar1">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav ms-auto">
+            <li class="nav-item active">
+                <a class="nav-link"  [routerLink]="['/home']" routerLinkActive="active">Home 
+                </a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/AboutMe']">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/mentorship']">Mentorship</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/blog']">Blog</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+</div>
+<router-outlet></router-outlet>

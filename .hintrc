@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "off",
+      {
+        "ignore": [
+          "width: -moz-fit-content, fit-content"
+        ]
+      }
+    ],
+    "meta-viewport": "off",
+    "axe/aria": [
+      "default",
+      {
+        "aria-valid-attr": "off"
+      }
+    ]
+  }
+}

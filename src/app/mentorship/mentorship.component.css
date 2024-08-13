@@ -1,0 +1,54 @@
+#sideForm{
+    position:relative;
+    font-weight: 300px;
+    background-image: url("/assets/images/mentorship/mentorship7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#form{
+    background-color: rgb(255, 255, 255, .5);
+    padding: 10px;
+    margin: 20px;
+}
+#formHeader{
+    text-align: center;
+    align-items: center;
+    font-size: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#formHead{
+    padding: 10px;
+    margin: 5px;
+    font-size: 20px;
+    font-family: Impact, sans-serif;
+    text-align: center;
+    color: cadetblue;
+}
+#all{
+    background-image:url("/assets/images/homebg4.");
+}
+#sideArticle{
+    background-color: rgb(255, 255, 255, .3);
+    font-size: 16px;
+    overflow-y: scroll;
+    height: 30em
+
+}
+#articleImage{
+    height: 300px;
+    width: 300px;
+}
+h4{
+    color: red;
+    font-weight: bold;
+}
+#formContainer{
+    background-color: rgb(255, 255, 255,.01);
+
+}
+#submitButton{
+    float: right;
+    margin: 10px;
+}
+

@@ -1,0 +1,93 @@
+<!--Carausel below the nav bar and first header
+will habe multiple slides/link for lit news, aside the carousal will be youtube video of me explaining stuff-->
+<carousel id="carousel">
+
+    <slide id="slide">
+        <img src="assets/images/blogCarousel/carouselBann(1).jpg" title="firstimage">
+        <div class="carousel-caption">
+            <p>Open for Collaboration and Network</p>
+            <p>if there any project you working on or have idea hit me up ASAP</p>
+          </div>
+    </slide>
+    <slide id="slide">
+        <img src="assets/images/blogCarousel/carouselBann(2).jpg" alt="">
+        <div class="carousel-caption">
+            <h1>Be Consistent, Be Human</h1>
+            <p>Hold Tangible Space for Success </p>
+          </div>
+    </slide>
+    <slide id="slide">
+        <img src="assets/images/blogCarousel/carouselBann(3).jpg" alt="">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>Be Consistent, Be Human</h1>
+            <p>Hold Tangible Space for Success </p>
+          </div>
+    </slide>
+</carousel>
+<!--Video will be shown here-->
+
+<div class="container-fluid" id="bodyContainer">
+    <!--the following row will have dark background with three binded 
+        cards and  option to seemore-button of content in which posts will be shown  in each -->
+        <aside class="" id="newpost">
+            <h4>
+                <button class="btn btn-dark" [routerLink]="['/newPost']">ADD NEW POST</button>
+            </h4> 
+        </aside>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-md-8">
+                        <!--first post-->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="" id="box1">Affiliate Marketing</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>{{affiliate}}</p>
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-dark f-r">READ MORE</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-md-8">
+                    <!--first post-->
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="" id="box1">Javascript</p>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-dark f-r">READ MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-md-8">
+        
+        </div>
+    </div>
+                </div>
+        
+         <app-newpost *ngFor="let newpost of post" [newpost]="newpost"></app-newpost>-->
+    <!--newly created post template-->
+    
+  <!--  =<button mat-raised-button (click)="createNewPost()" class=" btn-dark" id="newpostButton">Post </button>
+        <div class="card" *ngIf="Newpost" (dblclick) ="edit.emit(Newpost)">
+            <div class="container-wrapper">
+                <div class="container">
+
+                </div>
+            </div>
+            <div class="card-title">
+                <h4>{{Newpost. contentHeader}}</h4>
+            </div>
+            <div class="card-body">
+                <p>{{Newpost.contentBody}}</p>
+            </div>
+        </div>
+    </div>
+    -->
+    

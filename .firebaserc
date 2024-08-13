@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "samirdanmari-c47b7"
+  },
+  "targets": {
+    "samirdanmari-c47b7": {
+      "hosting": {
+        "samirdanmari": [
+          "samirdanmari-c47b7"
+        ]
+      }
+    }
+  }
+}

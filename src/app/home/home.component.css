@@ -18,6 +18,7 @@ margin: 10px;
 #meImage{
     width: 400px;
     height: 540px;
+    border-radius: 15px 30px 10px 30px;
 }
 #imageContainer{
     position: relative;
@@ -83,6 +84,16 @@ a:before {
    display:block;
     align-content: center;
 
+}
+#Certificates{
+    margin: 20px;
+background-color: aliceblue;
+background: rgba( 179, 220, 214, 0.2 );
+border-radius: 16px;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 

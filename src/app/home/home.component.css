@@ -86,14 +86,38 @@ a:before {
 
 }
 #Certificates{
-    margin: 20px;
+margin: 20px;
+padding-top: 20px;
 background-color: aliceblue;
-background: rgba( 179, 220, 214, 0.2 );
 border-radius: 16px;
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+background: rgba( 255, 255, 255, 0.05 );
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
+h4{
+    font-weight: 600;
+    font-size: 20px
+}
+.Specialities>li{
+    list-style: none;
+    font-size: 17px;
+    padding-left: 20px;
+}
 
+#education>li{
+    list-style: none;
+    font-style: italic;
+    font-size: 17px;
+    margin-top: 10px;
+}
+#technicalSkills>li{
+    list-style:none;
+    font-size: 15px;
+}
+#project-container{
+    background-color: #77beb5;
+    display: block;
+    box-shadow: 30px;
+}
 

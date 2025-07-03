@@ -3,7 +3,7 @@
 - 👀 I’m interested in Web-development  and GCP
 - 🌱 I’m currently learning Web application
 - 💞️ I’m looking to collaborate on Web Application and Cloud Computing
-- 📫 How to reach me ...IG@sameerdnmari, Twitter @samir_danmari
+- 📫 How to reach me ...IG@sameerdanmari, Twitter @samir_danmari
 
 <!---
 samirdanmari/samirdanmari is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.

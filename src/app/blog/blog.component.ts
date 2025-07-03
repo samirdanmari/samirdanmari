@@ -11,6 +11,18 @@ import { FormControl } from '@angular/forms';
 
 export  class BlogComponent {
 
+  post = [
+  {
+    contentHeader: 'First Blog Post',
+    contentBody: 'Welcome to my blog! Stay tuned for more content.'
+  },
+  {
+    contentHeader: 'Learning Angular',
+    contentBody: 'Angular 13 brought some serious improvements. Here’s what I found...'
+  }
+];
+
+
   affiliate = "Affialiate Market";
 
   newPost: NewPost[] = [
@@ -24,61 +36,5 @@ export  class BlogComponent {
     },
     
    ]
-post: any;
-   createNewPost():void{
-    
-   }
-  /*
-  posts: any [];
-
-    constructor (private db: AngularFireDatabase){
-     // Retrieve blog posts from Firebase
-    this.db.list('/posts').valueChanges().subscribe(posts => {
-      this.posts = posts;
-    });
-    }
-    createPost(title: string, content: string) {
-      // Create a new post
-      this.db.list('/posts').push({ title, content });
-    }
-
-    updatePost(key: string, updatedTitle: string, updatedContent: string) {
-      // Update a post
-      this.db.object(`/posts/${key}`).update({ title: updatedTitle, content: updatedContent });
-    }
-
-    deletePost(key: string) {
-      // Delete a post
-      this.db.object(`/posts/${key}`).remove();
-    }
-    */
+   
   }
-
-  
-
-  /*
-editTask(arg0: string,$event: NewPost) {
-throw new Error('Method not implemented.');
-}
-  todo: Task[] = [];
-  inProgress: Task[] = [];
-  done: Task[] = [];
-  drop(event: CdkDragDrop<Task[]>): void {
-    if (event.previousContainer === event.container) {
-      return;
-    }
-    if (!event.container.data || !event.previousContainer.data) {
-      return;
-    }
-    transferArrayItem(
-      event.previousContainer.data,
-      event.container.data,
-      event.previousIndex,
-      event.currentIndex
-    );
-  }
-  */
-
-  
- 
-  

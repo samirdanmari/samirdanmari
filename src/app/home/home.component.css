@@ -32,8 +32,10 @@ margin: 10px;
     color: aliceblue; 
 }
 #profession{
-    font-size: 30px;
-    color: whitesmoke;
+      font-family: Newsreader;
+      font-size: 30px;
+      text-shadow: 4px 4px 4px black;
+    color: aliceblue;
     text-align: center;
     padding: 5px;
 }

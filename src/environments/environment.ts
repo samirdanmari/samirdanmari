@@ -1,20 +1,41 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-export const environment = {
-  firebase: {
-    projectId: 'samirdanmari-c47b7',
-    appId: '1:226980998864:web:4b2f7531faf6174236f8d5',
-    databaseURL: 'https://samirdanmari-c47b7-default-rtdb.firebaseio.com',
-    storageBucket: 'samirdanmari-c47b7.appspot.com',
-    apiKey: 'AIzaSyCW3fMqT1bshE-yc9Bu-MYw9NvI9t0r4MQ',
-    authDomain: 'samirdanmari-c47b7.firebaseapp.com',
-    messagingSenderId: '226980998864',
-    measurementId: 'G-SMMN4FECWK',
-  },
-  production: false
+// Your web app's Firebase configuration
+export const environment= {
+   firebase:{
+  apiKey: "AIzaSyDng_b1q1-OZ1zWeZwYb8HpZSNBQdA5WxU",
+  authDomain: "samirdanmari-3787f.firebaseapp.com",
+  projectId: "samirdanmari-3787f",
+  storageBucket: "samirdanmari-3787f.firebasestorage.app",
+  messagingSenderId: "637709449026",
+  appId: "1:637709449026:web:bf3fb7b7462e201eac7adb"
+   },
+   production: false,
 };
+
+// Initialize Firebase
+
+//const app = initializeApp(environment);
+
+// export const environment = {
+//   firebase: {
+//     projectId: 'samirdanmari-c47b7',
+//     appId: '1:226980998864:web:4b2f7531faf6174236f8d5',
+//     databaseURL: 'https://samirdanmari-c47b7-default-rtdb.firebaseio.com',
+//     storageBucket: 'samirdanmari-c47b7.appspot.com',
+//     apiKey: 'AIzaSyCW3fMqT1bshE-yc9Bu-MYw9NvI9t0r4MQ',
+//     authDomain: 'samirdanmari-c47b7.firebaseapp.com',
+//     messagingSenderId: '226980998864',
+//     measurementId: 'G-SMMN4FECWK',
+//   },
+//   production: false
+// };
 
 /*
  * For easier debugging in development mode, you can import the following file

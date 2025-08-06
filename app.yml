@@ -1,0 +1,23 @@
+
+cat > app.yaml << 'EOF'
+runtime: nodejs18
+
+handlers:
+- url: /favicon.ico
+  static_files: dist/favicon.ico
+  upload: dist/favicon.ico
+
+- url: /assets
+  static_dir: dist/assets
+
+- url: /.*\.(js|css|map|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$
+  static_files: dist/\1
+  upload: dist/.*\.(js|css|map|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$
+
+- url: /api/.*
+  script: auto
+
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
+EOF

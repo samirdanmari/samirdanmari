@@ -18,6 +18,6 @@ handlers:
   script: auto
 
 - url: /.*
-  static_files: dist/index.html
-  upload: dist/index.html
+  static_files: dist/samirdanmari/index.html
+  upload: dist/samirdanmari/index.html
 EOF

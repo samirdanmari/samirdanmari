@@ -1,0 +1,27 @@
+# Create app.yaml for your Angular app
+cat > app.yaml << 'EOF'
+runtime: nodejs18
+
+handlers:
+# Static files
+- url: /favicon.ico
+  static_files: dist/favicon.ico
+  upload: dist/favicon.ico
+
+- url: /assets
+  static_dir: dist/assets
+
+# Angular app files
+- url: /.*\.(js|css|map|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$
+  static_files: dist/\1
+  upload: dist/.*\.(js|css|map|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$
+
+# API routes (for future backend)
+- url: /api/.*
+  script: auto
+
+# Serve Angular app for all other routes
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
+EOF

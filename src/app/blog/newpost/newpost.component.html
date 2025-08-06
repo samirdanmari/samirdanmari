@@ -1,6 +1,6 @@
 <h3>ADD NEW POST</h3>
 <!-- This is the form for creating a new blog post -->
-<form (ngSubmit)="postForm.valid" #postForm="ngForm">
+<form (ngSubmit)="submitPost()" #postForm="ngForm">
   <input type="text" placeholder="Title" [(ngModel)]="title" name="title" required>
 
   <textarea placeholder="Body" [(ngModel)]="body" name="body" required></textarea>

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 - 👋 Hi, I’m @samirdanmari
-- 👀 I’m interested in Web-development  and GCP
+- 👀 I’m a Software Developer
 - 🌱 I’m currently learning Web application
 - 💞️ I’m looking to collaborate on Web Application and Cloud Computing
 - 📫 How to reach me ...IG@sameerdanmari, Twitter @samir_danmari

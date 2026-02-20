@@ -4,9 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgForm, ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
-
 //add firebase
-
 //component
 import { AppComponent } from './app.component';
 import { AboutMeComponent } from './about-me/about-me.component';

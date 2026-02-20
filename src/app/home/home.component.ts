@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,Form,Validators, } from '@angular/forms';
+import { UntypedFormGroup,UntypedFormControl,Form,Validators, } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,14 +13,14 @@ export class HomeComponent implements OnInit {
   mail: any = "https://mail.google.com/mail/u/0/#inbox?compose=new"
 
   ngOnInit(): void {
-      this.heroForm = new FormGroup({
-        name: new FormControl(this.hero.name, [
+      this.heroForm = new UntypedFormGroup({
+        name: new UntypedFormControl(this.hero.name, [
           Validators.required,
           Validators.minLength(4),
           forbiddenNameValidator(/bob/i) // <-- Here's how you pass in the custom validator.
         ]),
-        alterEgo: new FormControl(this.hero.alterEgo),
-        power: new FormControl(this.hero.power, Validators.required)
+        alterEgo: new UntypedFormControl(this.hero.alterEgo),
+        power: new UntypedFormControl(this.hero.power, Validators.required)
       });
     
     }

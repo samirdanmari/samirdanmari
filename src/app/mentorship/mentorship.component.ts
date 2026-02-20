@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, NgModel, FormGroup, Validator, FormBuilder, Form, Validators, NgForm} from '@angular/forms'
+import {FormControl, NgModel, UntypedFormGroup, Validator, UntypedFormBuilder, Form, Validators, NgForm} from '@angular/forms'
 import { IMentorship } from '../mentorship';
 
 @Component({
@@ -12,12 +12,12 @@ export class MentorshipComponent implements OnInit {
   hero: any;
   email: any;
   menteeform: any;
-  constructor(private formBuilder: FormBuilder) { }
-form! :  FormGroup;
+  constructor(private formBuilder: UntypedFormBuilder) { }
+form! :  UntypedFormGroup;
 submitted = false;
  
   ngOnInit(): void {
-     email: new FormGroup (this.email, [
+     email: new UntypedFormGroup (this.email, [
       Validators.required,
        Validators.email,
      ])

@@ -1,119 +1,126 @@
 
 <div class="container" id="formContainer">
-            
-    <div class="row" id="all">
-        
-        <div class="col-lg-4 col-md-4 col-sm-12" id="sideArticle">
-            <h4>WHY HIRE MENTOR?</h4>
-            <H4>HERE ARE REASONS WHY YOU NEED A MENTOR</H4>
-            <ol>
-                <li><h4>Personalised guidance from an expert</h4>
-                    <p>A mentor has gained professional experience and practical
-                         skills throughout their career, and they can share that knowledge with you. 
-                         They can advise you in areas like time management, interpersonal skills and business 
-                         relationships. Consider asking your mentor to share important lessons from critical 
-                         decision points in their career or things they wish they had known before significant milestones. 
-                         They can share personalised 
-                        stories and help guide you on your career path.
-                </p>
 
-                <img src="/assets/images/mentorship/mentorship1.jpg" id="articleImage" alt="articleImage">
-            </li>
-                <li><h4>Accelerated professional development</h4>
-                    <p>Over time, your mentor may have learned how long key career steps take to achieve. 
-                        They can assist you while reaching
-                         similar milestones and provide guidance to help you minimise potential challenges.
-                          Your mentor can also monitor your professional development. 
-                          Consider asking them to help you set regular goals and schedule check-ins to ensure you're making good progress.
-                          Your mentor may also be familiar with important industry changes and can suggest 
-                          the best training courses to take or exciting new development areas to focus on. 
-                          Consider asking them for advice to help you accelerate your professional growth.
-                 </p> 
-                 <img src="/assets/images/mentorship/mentorship5.jpg" id="articleImage" title="image">
-                </li>
-                 <li><h4>More focused goals</h4>
-                <p> Since they're successful in your work field, your mentor may know what both the industry, 
-                    and your company specifically, are looking for. By working with a mentor, you can get help 
-                    setting short-term practical goals and long-term career goals. You can also try to match these goals 
-                    with your employer's needs. 
-                    You can rely on your mentor to help you set and achieve specific goals for your role and company.
+  <div class="row" id="all">
 
-                </p>
-                <img src="/assets/images/mentorship/mentorship6.jpg" id="articleImage" alt="articleImage">
-            </li>
-                <li><h4>Increased motivation</h4>
-                <p>A mentor can help motivate and inspire you. By using your mentor as an example, 
-                    you can remind yourself what you're working towards. 
-                    Your mentor's personal support can give you more confidence and a willingness to try new things.
-                     Consider sharing your successes with your mentor so you can celebrate them together.
-                </p></li>
-            </ol>
-        </div>
-        
-            <div class="col-lg-8 col-md-4 col-sm-12" id="sideForm">
-                <div id="form">
-                <h3 class="" id="formHead">SIGN UP FOR VIRTUAL MENTORSHIP PROGRAM</h3>
-                <h5  id="formHead">BECOME SAMEER MENTEE</h5>
-                <form class="form" *ngIf="menteeform"  #myForm="" (onSubmit)="onSubmit">
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-4 form-group">
-                            <label for="Firstname">Firstname</label>
-                            <input type="text" class="form-control"title="firtname">
-                        </div>
-                        <div class="col-lg-4 col-sm-4 form-group">
-                            <label for="Surname">Surname</label>
-                            <input type="text" class="form-control" title="surname">
-                        </div>
-                         <div class="col-lg-4 col-sm-4 form-group">
-                            <label for="lastname">Lastname</label><input type="text" class="form-control" title="lastname">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-6 form-group">
-                            <label for="Course">Course</label>
-                            <select class="custom-select form-control" title="courseselection">COURSE
-                                <option>Core Javascript</option>
-                                <option>OOP (Java)</option>
-                                <option>Web Design (basic)</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-4 col-sm-12 form-group">
-                            <label for="gender">Native Languege</label><input type="text" class="form-control" title="native languge">
-                        </div>
-                        <div class="col-lg-4 col-sm-12 form-group">
-                            <label for="languge">Languege preference</label><select class="form-control" title="language preference">
-                                <option>English</option>
-                                <option>Pidgin</option>
-                                <option>Hausa</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-12 form-group">
-                            <label for="age">Age</label><input type="text" class="form-control" title="age">
-                        </div>
-                        <div class="col-lg-2 col-sm-12 form-group">
-                            <label for="gender">Gender</label><input type="text" class="form-control" title="gender">
-                        </div>
-                        <div class="row">
-    
-                            <div class="col-lg-4 col-sm-12 form-group">
-                                <label for="gender">Tel-NO</label><input type="tel" class="form-control" title="telno">
-                            </div>
-                            <div class="col-lg-4 col-sm-12 form-group">
-                                <label for="gender">Emai</label>
-                              <input type="email" class="form-control" placeholder="Email" id="email" name="email" [ngClass]="{ 'is-invalid': submitted && email.errors }">
-                              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
-                              <div *ngIf="email.errors?.['required']">Email is required</div>
-                              <div *ngIf="email.errors.email">Email must be a valid email address</div>
-                          </div>
-                            </div>  
-                        <div class="col-lg-6 col-sm-6 form-group">
-                            <label for="Address">Address</label><textarea class= form-control rows="3" id="address" title="addres"></textarea>
-                        </div>
-                    </div>
-                    <button class="btn btn-success" id="submitButton" type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-        </div>
+    <div class="col-lg-4 col-md-4 col-sm-12" id="sideArticle">
+      <h4>WHY HIRE MENTOR?</h4>
+      <H4>HERE ARE REASONS WHY YOU NEED A MENTOR</H4>
+      <ol>
+        <li><h4>Personalised guidance from an expert</h4>
+        <p>A mentor has gained professional experience and practical
+          skills throughout their career, and they can share that knowledge with you.
+          They can advise you in areas like time management, interpersonal skills and business
+          relationships. Consider asking your mentor to share important lessons from critical
+          decision points in their career or things they wish they had known before significant milestones.
+          They can share personalised
+          stories and help guide you on your career path.
+        </p>
+
+        <img src="/assets/images/mentorship/mentorship1.jpg" id="articleImage" alt="articleImage">
+      </li>
+      <li><h4>Accelerated professional development</h4>
+      <p>Over time, your mentor may have learned how long key career steps take to achieve.
+        They can assist you while reaching
+        similar milestones and provide guidance to help you minimise potential challenges.
+        Your mentor can also monitor your professional development.
+        Consider asking them to help you set regular goals and schedule check-ins to ensure you're making good progress.
+        Your mentor may also be familiar with important industry changes and can suggest
+        the best training courses to take or exciting new development areas to focus on.
+        Consider asking them for advice to help you accelerate your professional growth.
+      </p>
+      <img src="/assets/images/mentorship/mentorship5.jpg" id="articleImage" title="image">
+    </li>
+    <li><h4>More focused goals</h4>
+    <p> Since they're successful in your work field, your mentor may know what both the industry,
+      and your company specifically, are looking for. By working with a mentor, you can get help
+      setting short-term practical goals and long-term career goals. You can also try to match these goals
+      with your employer's needs.
+      You can rely on your mentor to help you set and achieve specific goals for your role and company.
+
+    </p>
+    <img src="/assets/images/mentorship/mentorship6.jpg" id="articleImage" alt="articleImage">
+  </li>
+  <li><h4>Increased motivation</h4>
+  <p>A mentor can help motivate and inspire you. By using your mentor as an example,
+    you can remind yourself what you're working towards.
+    Your mentor's personal support can give you more confidence and a willingness to try new things.
+    Consider sharing your successes with your mentor so you can celebrate them together.
+  </p></li>
+</ol>
+</div>
+
+<div class="col-lg-8 col-md-4 col-sm-12" id="sideForm">
+  <div id="form">
+    <h3 class="" id="formHead">SIGN UP FOR VIRTUAL MENTORSHIP PROGRAM</h3>
+    <h5  id="formHead">BECOME SAMEER MENTEE</h5>
+    @if (menteeform) {
+      <form class="form"  #myForm="" (onSubmit)="onSubmit">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4 form-group">
+            <label for="Firstname">Firstname</label>
+            <input type="text" class="form-control"title="firtname">
           </div>
+          <div class="col-lg-4 col-sm-4 form-group">
+            <label for="Surname">Surname</label>
+            <input type="text" class="form-control" title="surname">
+          </div>
+          <div class="col-lg-4 col-sm-4 form-group">
+            <label for="lastname">Lastname</label><input type="text" class="form-control" title="lastname">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 form-group">
+            <label for="Course">Course</label>
+            <select class="custom-select form-control" title="courseselection">COURSE
+              <option>Core Javascript</option>
+              <option>OOP (Java)</option>
+              <option>Web Design (basic)</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-sm-12 form-group">
+            <label for="gender">Native Languege</label><input type="text" class="form-control" title="native languge">
+          </div>
+          <div class="col-lg-4 col-sm-12 form-group">
+            <label for="languge">Languege preference</label><select class="form-control" title="language preference">
+            <option>English</option>
+            <option>Pidgin</option>
+            <option>Hausa</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-2 col-sm-12 form-group">
+        <label for="age">Age</label><input type="text" class="form-control" title="age">
+      </div>
+      <div class="col-lg-2 col-sm-12 form-group">
+        <label for="gender">Gender</label><input type="text" class="form-control" title="gender">
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-sm-12 form-group">
+          <label for="gender">Tel-NO</label><input type="tel" class="form-control" title="telno">
+        </div>
+        <div class="col-lg-4 col-sm-12 form-group">
+          <label for="gender">Emai</label>
+          <input type="email" class="form-control" placeholder="Email" id="email" name="email" [ngClass]="{ 'is-invalid': submitted && email.errors }">
+          @if (email.invalid && (email.dirty || email.touched)) {
+            <div class="invalid-feedback">
+              @if (email.errors?.['required']) {
+                <div>Email is required</div>
+              }
+              @if (email.errors.email) {
+                <div>Email must be a valid email address</div>
+              }
+            </div>
+          }
+        </div>
+        <div class="col-lg-6 col-sm-6 form-group">
+          <label for="Address">Address</label><textarea class= form-control rows="3" id="address" title="addres"></textarea>
+        </div>
+      </div>
+      <button class="btn btn-success" id="submitButton" type="submit">Submit</button>
+    </form>
+  }
+</div>
+</div>
+</div>
+</div>

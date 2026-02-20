@@ -4,7 +4,7 @@ import { UntypedFormGroup,UntypedFormControl,Form,Validators, } from '@angular/f
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
-    standalone: false
+    standalone: true
 })
 export class HomeComponent implements OnInit {
   hero: any;

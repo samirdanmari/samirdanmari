@@ -10,4 +10,6 @@
   <button type="submit" [disabled]="!postForm.valid">Post</button>
 </form>
 
-<div *ngIf="uploadPercent">Uploading: {{ uploadPercent }}%</div>
+@if (uploadPercent) {
+  <div>Uploading: {{ uploadPercent }}%</div>
+}

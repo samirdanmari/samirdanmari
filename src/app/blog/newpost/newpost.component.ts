@@ -1,9 +1,10 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { PostService } from '../../services/post.service';
 @Component({
-  selector: 'app-newpost',
-  templateUrl: './newpost.component.html',
-  styleUrls: ['./newpost.component.css'],
+    selector: 'app-newpost',
+    templateUrl: './newpost.component.html',
+    styleUrls: ['./newpost.component.css'],
+    standalone: false
 })
 export class NewpostComponent implements OnInit {
 

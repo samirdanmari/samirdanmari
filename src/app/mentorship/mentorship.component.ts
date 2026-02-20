@@ -3,9 +3,10 @@ import {FormControl, NgModel, UntypedFormGroup, Validator, UntypedFormBuilder, F
 import { IMentorship } from '../mentorship';
 
 @Component({
-  selector: 'app-mentorship',
-  templateUrl: './mentorship.component.html',
-  styleUrls: ['./mentorship.component.css']
+    selector: 'app-mentorship',
+    templateUrl: './mentorship.component.html',
+    styleUrls: ['./mentorship.component.css'],
+    standalone: false
 })
 export class MentorshipComponent implements OnInit {
   

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup,UntypedFormControl,Form,Validators, } from '@angular/forms';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   hero: any;

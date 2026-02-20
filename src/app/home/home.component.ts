@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
         name: new UntypedFormControl(this.hero.name, [
           Validators.required,
           Validators.minLength(4),
-          forbiddenNameValidator(/bob/i) // <-- Here's how you pass in the custom validator.
+          forbiddenNameValidator(/bob/i)
         ]),
         alterEgo: new UntypedFormControl(this.hero.alterEgo),
         power: new UntypedFormControl(this.hero.power, Validators.required)

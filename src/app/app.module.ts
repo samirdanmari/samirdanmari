@@ -49,7 +49,7 @@ import { providePerformance,getPerformance } from '@angular/fire/performance';
         DragDropModule,
         FormsModule,
         //Material design imports
-        MaterialModule,
+        // MaterialModule,
         //carousel
         CarouselModule.forRoot(),
         // firebase

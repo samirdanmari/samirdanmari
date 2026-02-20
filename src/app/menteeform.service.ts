@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, Observable, tap, throwError } from 'rxjs';
 import { IMentorship } from './mentorship';
 
 @Injectable({

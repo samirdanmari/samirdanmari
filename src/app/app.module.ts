@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { NgForm, ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 //add firebase
 //component
 import { AppComponent } from './app.component';
@@ -31,42 +31,32 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    AboutMeComponent,
-    NavigationComponent,
-    HomeComponent,
-    BlogComponent,
-    MentorshipComponent,
-    FooterComponent,
-    NewpostComponent,
-   
-    //
-    
-   
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    DragDropModule,
-    FormsModule,
-    //Material design imports
-    MaterialModule,
-    //carousel
-    CarouselModule.forRoot(),
-    // firebase
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
-    provideFunctions(() => getFunctions()),
-    providePerformance(() => getPerformance()),
-    provideStorage(() => getStorage()),
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        AboutMeComponent,
+        NavigationComponent,
+        HomeComponent,
+        BlogComponent,
+        MentorshipComponent,
+        FooterComponent,
+        NewpostComponent,
+        //
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        DragDropModule,
+        FormsModule,
+        //Material design imports
+        MaterialModule,
+        //carousel
+        CarouselModule.forRoot(),
+        // firebase
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideDatabase(() => getDatabase()),
+        provideFirestore(() => getFirestore()),
+        provideFunctions(() => getFunctions()),
+        providePerformance(() => getPerformance()),
+        provideStorage(() => getStorage())], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

@@ -109,6 +109,29 @@
     margin-top: 15px;
     font-weight: 600;
 }
+.modal-content {
+    background: #0f172a !important; /* Matches your portfolio dark theme */
+    border-radius: 25px;
+}
+
+.modal-header .btn-close {
+    background-color: #0dcaf0;
+    opacity: 0.8;
+}
+
+.carousel-item img {
+    height: 450px;
+    object-fit: contain; /* Ensures the whole screenshot is visible without cropping */
+    background: #1e293b;
+}
+
+.modal-body .badge {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    background: rgba(13, 202, 240, 0.1) !important;
+    color: #0dcaf0 !important;
+    border: 1px solid #0dcaf0;
+}
 /* h2{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 500;

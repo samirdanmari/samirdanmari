@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, NgModel, UntypedFormGroup, Validator, UntypedFormBuilder, Form, Validators, NgForm} from '@angular/forms'
+import { UntypedFormGroup, UntypedFormBuilder, Validators,} from '@angular/forms'
 import { IMentorship } from '../mentorship';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-mentorship',
     templateUrl: './mentorship.component.html',
     styleUrls: ['./mentorship.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, FormsModule]
 })
 export class MentorshipComponent implements OnInit {
   

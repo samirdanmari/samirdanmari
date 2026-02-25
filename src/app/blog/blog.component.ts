@@ -1,13 +1,16 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { NewPost } from './newpost/Newpost';
-import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
-import { FormControl } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CommonModule } from '@angular/common';
+import { SlideComponent } from 'ngx-bootstrap/carousel';
 //import {AngularFireDatabase} from '@angular/fire/database'
 @Component({
     selector: 'app-blog',
     templateUrl: './blog.component.html',
     styleUrls: ['./blog.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [FormsModule,CommonModule, CarouselModule,SlideComponent]
 })
 
 export  class BlogComponent {

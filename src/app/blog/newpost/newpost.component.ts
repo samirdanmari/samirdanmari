@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PostService } from '../../services/post.service';
 @Component({
@@ -6,7 +7,7 @@ import { PostService } from '../../services/post.service';
     templateUrl: './newpost.component.html',
     styleUrls: ['./newpost.component.css'],
     standalone: true,
-    imports: [FormsModule]
+    imports: [CommonModule, FormsModule]
 })
 export class NewpostComponent implements OnInit {
 

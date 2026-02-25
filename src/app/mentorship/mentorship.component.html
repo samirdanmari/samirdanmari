@@ -55,7 +55,7 @@
     <h3 class="" id="formHead">SIGN UP FOR VIRTUAL MENTORSHIP PROGRAM</h3>
     <h5  id="formHead">BECOME SAMEER MENTEE</h5>
     @if (menteeform) {
-      <form class="form"  #myForm="" (onSubmit)="onSubmit">
+      <form class="form"  #myForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-lg-4 col-sm-4 form-group">
             <label for="Firstname">Firstname</label>

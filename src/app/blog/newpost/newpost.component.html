@@ -1,15 +1,67 @@
-<h3>ADD NEW POST</h3>
-<!-- This is the form for creating a new blog post -->
-<form (ngSubmit)="submitPost()" #postForm="ngForm">
-  <input type="text" placeholder="Title" [(ngModel)]="title" name="title" required>
+<div class="newpost-container">
+  <h2 class="page-title">Create New Blog Post</h2>
 
-  <textarea placeholder="Body" [(ngModel)]="body" name="body" required></textarea>
+  <form (ngSubmit)="submitPost()" #postForm="ngForm" class="post-form">
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title">Post Title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="title"
+        required
+        class="form-control"
+        placeholder="Enter post title"
+      />
+    </div>
 
-  <input type="file" (change)="uploadImage($event)">
+    <!-- Body -->
+    <div class="form-group">
+      <label for="body">Post Content</label>
+      <textarea
+        id="body"
+        name="body"
+        [(ngModel)]="body"
+        required
+        class="form-control"
+        rows="6"
+        placeholder="Write your blog content here..."
+      ></textarea>
+    </div>
 
-  <button type="submit" [disabled]="!postForm.valid">Post</button>
-</form>
+    <!-- Media Upload -->
+    <div class="form-group">
+      <label for="media">Upload Photo or Video</label>
+      <input
+        type="file"
+        id="media"
+        (change)="uploadImage($event)"
+        accept="image/*,video/*"
+        class="form-control-file"
+      />
 
-@if (uploadPercent) {
-  <div>Uploading: {{ uploadPercent }}%</div>
-}
+      <!-- Progress bar -->
+      <div *ngIf="uploadPercent !== null" class="progress mt-2">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="uploadPercent"
+        >
+          {{ uploadPercent }}%
+        </div>
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-container" *ngIf="mediaUrl">
+        <img *ngIf="isImage(mediaUrl)" [src]="mediaUrl" alt="Preview" class="preview-img" />
+        <video *ngIf="isVideo(mediaUrl)" [src]="mediaUrl" controls class="preview-video"></video>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!postForm.valid">
+      Publish Post
+    </button>
+  </form>
+</div>

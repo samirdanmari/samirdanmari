@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, deleteDoc, doc, Firestore, updateDoc } from '@angular/fire/firestore';
+import { Firestore, collection, doc, addDoc, updateDoc, deleteDoc, getDoc } from '@angular/fire/firestore';
+import { collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from '@angular/fire/storage';
-import { Auth } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,25 @@ export class PostService {
   private mediaRef: any;
   private uploadProgress = new BehaviorSubject<number | null>(null);
 
-  constructor(private firestore: Firestore, private storage: Storage, private auth: Auth) {}
+  constructor(private firestore: Firestore, private storage: Storage) {}
 
-  getCurrentUserId() {
-    return this.auth.currentUser?.uid ?? '';
+  // Get all posts
+  getPosts(): Observable<any[]> {
+    const postRef = collection(this.firestore, 'posts');
+    return collectionData(postRef, { idField: 'id' }) as Observable<any[]>;
   }
 
+  // Create a new post
   createPost(postData: any) {
     const postRef = collection(this.firestore, 'posts');
-    return addDoc(postRef, postData);
+    return addDoc(postRef, { 
+      ...postData, 
+      likes: 0, 
+      comments: [] 
+    });
   }
-
-  uploadMedia(file: File) {
+  // 🔹 Upload media (photo or video)
+  uploadMedia(file: File): Observable<number | null> {
     const filePath = `media/${Date.now()}_${file.name}`;
     this.mediaRef = ref(this.storage, filePath);
     const task = uploadBytesResumable(this.mediaRef, file);
@@ -34,34 +42,46 @@ export class PostService {
     return this.uploadProgress.asObservable();
   }
 
-  async getUploadedMediaUrl() {
+  // 🔹 Get uploaded media URL
+  async getUploadedMediaUrl(): Promise<string> {
     return await getDownloadURL(this.mediaRef);
+  }
+  // Update a post
+  updatePost(postId: string, updatedData: any) {
+    const postRef = doc(this.firestore, `posts/${postId}`);
+    return updateDoc(postRef, updatedData);
+  }
+
+  // Delete a post
+  deletePost(postId: string) {
+    const postRef = doc(this.firestore, `posts/${postId}`);
+    return deleteDoc(postRef);
+  }
+
+  // Like a post
+  async likePost(postId: string) {
+    const postRef = doc(this.firestore, `posts/${postId}`);
+    const snapshot = await getDoc(postRef);
+    if (snapshot.exists()) {
+      const currentLikes = snapshot.data()['likes'] || 0;
+      await updateDoc(postRef, { likes: currentLikes + 1 });
+    }
+  }
+
+  // Add a comment
+  async addComment(postId: string, comment: { author: string; text: string }) {
+    const postRef = doc(this.firestore, `posts/${postId}`);
+    const snapshot = await getDoc(postRef);
+    if (snapshot.exists()) {
+      const currentComments = snapshot.data()['comments'] || [];
+      const newComment = { ...comment, createdAt: new Date().toISOString() };
+      await updateDoc(postRef, { comments: [...currentComments, newComment] });
+    }
   }
 }
 
-  // addPost(post: any) {
-  //   const postRef = collection(this.firestore, 'posts');
-  //   return addDoc(postRef, post);
-  // }
 
-  // getPosts() {
-  //   const postRef = collection(this.firestore, 'posts');
-  //   return collectionData(postRef, { idField: 'id' });
-  // }
 
-  // updatePost(postId: string, data: any) {
-  //   const postDoc = doc(this.firestore, `posts/${postId}`);
-  //   return updateDoc(postDoc, data);
-  // }
 
-  // deletePost(postId: string) {
-  //   const postDoc = doc(this.firestore, `posts/${postId}`);
-  //   return deleteDoc(postDoc);
-  // }
 
-  // addComment(postId: string, comment: any) {
-  //   const postDoc = doc(this.firestore, `posts/${postId}`);
-  //   const commentsRef = collection(postDoc, 'comments');
-  //   return addDoc(commentsRef, comment);
-  // }
 

@@ -1,12 +1,63 @@
-mat-card-title{
-    background-color: whitesmoke;
-    color: darkslategray;
-    text-align: center;
-    margin: 10px
+.newpost-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-mat-card-header{
-    background-color: whitesmoke;
-    color: black;
-    font-size: 20px;
-    border-radius: 1px;
+
+.page-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.post-form .form-group {
+  margin-bottom: 20px;
+}
+
+.form-control, .form-control-file {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.progress {
+  height: 20px;
+  background-color: #f1f1f1;
+  border-radius: 6px;
+}
+
+.progress-bar {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.preview-container {
+  margin-top: 15px;
+}
+
+.preview-img, .preview-video {
+  display: block;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }

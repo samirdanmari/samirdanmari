@@ -4,7 +4,7 @@ import { UntypedFormGroup,UntypedFormControl,Form,Validators, } from '@angular/f
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
-    standalone: true
+    standalone: true,
 })
 export class HomeComponent implements OnInit {
   hero: any;
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
         alterEgo: new UntypedFormControl(this.hero.alterEgo),
         power: new UntypedFormControl(this.hero.power, Validators.required)
       });
-    
+
     }
     
     get name() { return this.heroForm.get('name'); }

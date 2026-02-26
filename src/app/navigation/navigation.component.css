@@ -1,48 +1,66 @@
-#navigation{
-    background-color: #659DBD;
-    background-image: url("/assets/images/homepage/homebg4.png");
-font-size: larger;
-}
-a {
-    background-image: linear-gradient(
-      to right,
-      #54b3d6,
-      #54b3d6 50%,
-      rgb(255, 255, 255) 50%
-    );
-    background-size: 200% 100%;
-    background-position: -100%;
-    display: inline-block;
-    padding: 5px 0;
-    position: relative;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  a:before {
-    content: '';
-    background: #54b3d6;
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  a:hover {
-   background-position: 0;
-  }
-  
-  a:hover::before {
-    width:100%;
-  }
-li>a.active{
-  columns: red;
+/* Sticky Glassmorphism Effect */
+.custom-nav {
+    background: rgba(10, 77, 104, 0.8) !important; /* Deep Blue semi-transparent */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
 }
 
-#navbarCollapse{
-    color: black;
+/* Brand Styling */
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    color: #fff !important;
+    background: none !important; /* Overriding your gradient-text for the brand */
+    -webkit-text-fill-color: initial !important;
+}
+
+.brand-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #0dcaf0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #0dcaf0;
+}
+
+/* Nav Links Styling */
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+    background: none !important; /* Cleaning up the gradient text for standard links */
+    -webkit-text-fill-color: initial !important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #0dcaf0 !important;
+}
+
+/* Modern Hover Underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 15%;
+    width: 0;
+    height: 2px;
+    background: #0dcaf0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 70%;
+}
+
+/* Adjusting padding for fixed navbar so content doesn't hide behind it */
+body {
+    padding-top: 80px;
+}
+
+/* Fix for Mobile Toggler */
+.navbar-toggler {
+    filter: invert(1); /* Makes the "hamburger" icon white */
 }

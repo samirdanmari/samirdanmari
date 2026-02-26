@@ -1,15 +1,28 @@
-#sideForm{
-    position:relative;
-    font-weight: 300px;
-    background-image: url("/assets/images/mentorship/mentorship7.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+#mentorship-section {
+    background: #f8fafc;
 }
-#form{
-    background-color: rgb(255, 255, 255, .5);
-    padding: 10px;
-    margin: 20px;
+.mentorship-scroll-box {
+    max-height: 70vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
+.glass-form-card {
+    background: white;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.form-control, .form-select {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(13, 202, 240, 0.2);
+    border-color: #0dcaf0;
+}
+
+
 #formHeader{
     text-align: center;
     align-items: center;
@@ -25,30 +38,25 @@
     text-align: center;
     color: cadetblue;
 }
-#all{
-    background-image:url("/assets/images/homebg4.");
+.benefit-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
-#sideArticle{
-    background-color: rgb(255, 255, 255, .3);
-    font-size: 16px;
-    overflow-y: scroll;
-    height: 30em
+.btn-primary {
+    background: #0d6efd;
+    border: none;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+}
 
-}
 #articleImage{
     height: 300px;
     width: 300px;
 }
-h4{
-    color: red;
-    font-weight: bold;
-}
-#formContainer{
-    background-color: rgb(255, 255, 255,.01);
 
-}
-#submitButton{
-    float: right;
-    margin: 10px;
-}
+
 

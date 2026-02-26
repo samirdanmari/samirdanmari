@@ -1,4 +1,128 @@
-#homepage{
+#homepage {
+    /* Professional Deep Gradient instead of a repetitive small image */
+    background: radial-gradient(circle at 10% 20%, #0A4D68 0%, #081221 100%);
+    color: white;
+    padding: 100px 0;
+}
+
+/* Modern Profile Look */
+.profile-blob {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    background: #088395;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: morphing 10s infinite alternate;
+    overflow: hidden;
+    border: 5px solid rgba(13, 202, 240, 0.3);
+}
+
+#meImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes morphing {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    100% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+}
+
+/* Typography */
+#Uppername {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -1px;
+}
+
+#profession {
+    color: #0dcaf0;
+    font-weight: 300;
+}
+
+#article {
+    max-width: 600px;
+    color: #a0aec0;
+    line-height: 1.8;
+}
+
+/* Social Links - No text, just elegant icons */
+.social-links-modern a {
+    font-size: 1.5rem;
+    color: #cbd5e0;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.social-links-modern a:hover {
+    color: #0dcaf0;
+    transform: translateY(-3px);
+}
+
+/* Glassmorphism Form */
+.glass-card-compact {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.form-control::placeholder { color: #718096; }
+/* Tech Icons Styling */
+.tech-icon-wrapper {
+    font-size: 2.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.tech-icon-wrapper:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(13, 202, 240, 0.1);
+    border-color: #0dcaf0;
+    box-shadow: 0 0 20px rgba(13, 202, 240, 0.3);
+}
+
+/* Custom Progress Bars */
+.custom-progress {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: visible;
+}
+
+.custom-progress .progress-bar {
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.5);
+}
+
+/* Add a glowing dot at the end of the progress bar */
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -3px;
+    width: 12px;
+    height: 12px;
+    background: #0dcaf0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #0dcaf0;
+}
+/* #homepage{
     background-color:#659DBD;
     background-image:url("/assets/images/homepage/homebg4.png");
     background-repeat: repeat;
@@ -87,39 +211,4 @@ a:before {
     align-content: center;
 
 }
-#Certificates{
-margin: 20px;
-padding-top: 20px;
-background-color: aliceblue;
-border-radius: 16px;
-background: rgba( 255, 255, 255, 0.05 );
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-}
-h4{
-    font-weight: 600;
-    font-size: 20px
-}
-.Specialities>li{
-    list-style: none;
-    font-size: 17px;
-    padding-left: 20px;
-}
-
-#education>li{
-    list-style: none;
-    font-style: italic;
-    font-size: 17px;
-    margin-top: 10px;
-}
-#technicalSkills>li{
-    list-style:none;
-    font-size: 15px;
-}
-#project-container{
-    background-color: #77beb5;
-    display: block;
-    box-shadow: 30px;
-}
-
+ */

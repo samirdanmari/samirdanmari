@@ -1,58 +1,54 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormBuilder, Validators,} from '@angular/forms'
 import { IMentorship } from '../mentorship';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 @Component({
     selector: 'app-mentorship',
     templateUrl: './mentorship.component.html',
     styleUrls: ['./mentorship.component.css'],
     standalone: true,
-    imports: [CommonModule, FormsModule]
+    imports: [CommonModule, ReactiveFormsModule]
 })
 export class MentorshipComponent implements OnInit {
-  
-  hero: any;
-  email: any;
-  menteeform: any;
-  constructor(private formBuilder: UntypedFormBuilder) { }
-form! :  UntypedFormGroup;
-submitted = false;
- 
-  ngOnInit(): void {
-     email: new UntypedFormGroup (this.email, [
-      Validators.required,
-       Validators.email,
-     ])
+  mentorshipForm!: FormGroup;
+  submitted = false;
 
-     };
-    /*email validotor
-    this.form = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.mentorshipForm = this.fb.group({
+      firstname: ['', Validators.required],
+      surname: [''],
+      lastname: [''],
+      course: ['Core Javascript'],
+      email: ['', [Validators.required, Validators.email]],
+      address: ['', Validators.required]
     });
   }
-  */
-    get f() { 
-      return this.form.controls; 
+
+  get f() { return this.mentorshipForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.mentorshipForm.invalid) {
+      return;
     }
 
-    onSubmit() {
-        this.submitted = true;
+    const data = this.mentorshipForm.value;
+    
+    // Construct the WhatsApp Message
+    const message = `Hello Samir! I want to join your Mentorship Program.%0A%0A` +
+                    `*Name:* ${data.firstname} ${data.surname}%0A` +
+                    `*Course:* ${data.course}%0A` +
+                    `*Email:* ${data.email}%0A` +
+                    `*Goals:* ${data.address}`;
 
-        // stop here if form is invalid
-        if (this.form.invalid) {
-            return;
-        }
-
-        // display form values on success
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
-    }
-
-    onReset() {
-        this.submitted = false;
-        this.form.reset();
-    }
-  box1Header = "Angular pros/cons"
-  mentee: IMentorship[] = [];
+    // Your WhatsApp Number (Include international code, no + or spaces)
+    const phoneNumber = "2348187166115"; 
+    
+    // Redirect to WhatsApp
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  }
 }
 

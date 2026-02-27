@@ -1,44 +1,55 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NewPost } from './newpost/Newpost';
+import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CommonModule } from '@angular/common';
 import { SlideComponent } from 'ngx-bootstrap/carousel';
+import { PostService } from '../services/post.service';
 //import {AngularFireDatabase} from '@angular/fire/database'
 @Component({
     selector: 'app-blog',
     templateUrl: './blog.component.html',
     styleUrls: ['./blog.component.css'],
     standalone: true,
-    imports: [FormsModule,CommonModule, CarouselModule,SlideComponent]
+    imports: [FormsModule,CommonModule, RouterLink,CarouselModule,SlideComponent]
 })
 
 export  class BlogComponent {
+  posts: any[] = [];
+  newComment: { [key: string]: string } = {};
+  selectedPost: any | null = null; // for modal
 
-  post = [
-  {
-    contentHeader: 'First Blog Post',
-    contentBody: 'Welcome to my blog! Stay tuned for more content.'
-  },
-  {
-    contentHeader: 'Learning Angular',
-    contentBody: 'Angular 13 brought some serious improvements. Here’s what I found...'
+    constructor(private postService: PostService) {}
+
+  ngOnInit(): void {
+    this.postService.getPosts().subscribe(posts => {
+      this.posts = posts;
+    });
   }
-];
 
-
-  affiliate = "Affialiate Market";
-
-  newPost: NewPost[] = [
-    {
-      title: 'AWS',
-      contentHeader: 'First Look ON Amazon Web Services',
-      contentBody: '',
-      contentFooter: '',
-      contentImage: '',
-
-    },
-    
-   ]
-   
+  likePost(postId: string) {
+    this.postService.likePost(postId);
   }
+  addComment(postId: string) {
+    const text = this.newComment[postId];
+    if (text && text.trim()) {
+      this.postService.addComment(postId, { author: 'Guest', text });
+      this.newComment[postId] = '';
+    }
+  }
+    openPost(post: any) {
+    this.selectedPost = post;
+  }
+    closeModal() {
+    this.selectedPost = null;
+  }
+  }
+  //
+
+
+
+
+
+
+

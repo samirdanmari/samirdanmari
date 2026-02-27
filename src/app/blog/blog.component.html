@@ -1,5 +1,5 @@
 
-<carousel id="carousel">
+<carousel class="hero-carousel">
 
     <slide id="slide">
         <img src="assets/images/blogCarousel/carouselBann(1).jpg" title="firstimage">
@@ -12,7 +12,7 @@
         <img src="assets/images/blogCarousel/carouselBann(2).jpg" alt="">
         <div class="carousel-caption">  
             <h1>Be Consistent, Be Human</h1>
-            <p>Hold Tangible Space for Success </ p>
+            <p>Hold Tangible Space for Success </p>
           </div>
     </slide>
     <slide id="slide">
@@ -25,50 +25,51 @@
 </carousel>
 <!--Video will be shown here-->
 
-<div class="container-fluid" id="bodyContainer">
-    <!--the following row will have dark background with three binded 
-        cards and  option to seemore-button of content in which posts will be shown  in each -->
-        <aside class="" id="newpost">
-            <h4>    
-                <a class="btn btn-dark" href="/newPost">ADD NEW POST</a>
-            </h4> 
-        </aside>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-md-8">
-                        <!--first post-->
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="" id="box1">Affiliate Marketing</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>{{affiliate}}</p>
-
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-dark f-r">READ MORE</button>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-md-8">
-                    <!--first post-->
-                    <div class="card">
-                        <div class="card-header">
-                            <p class="" id="box1">Javascript</p>
-                    </div>
-                    <div class="card-body">
-
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-dark f-r">READ MORE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 col-md-8">
-        
+s<div class="container blog-container mt-5">
+  <aside class="text-end mb-4">
+    <a class="btn btn-dark" routerLink="/newPost">➕ Add New Post</a>
+  </aside>
+    <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let post of posts">
+      <div class="card post-card h-100">
+        <div class="card-header">
+          <h3>{{ post.title }}</h3>
         </div>
+        <div class="card-body">
+          <p>{{ post.body }}</p>
+          <img *ngIf="post.mediaUrl && post.mediaUrl.match(/\.(jpeg|jpg|png|gif)$/i)" 
+               [src]="post.mediaUrl" class="img-fluid rounded mt-2" alt="Post image">
+          <video *ngIf="post.mediaUrl && post.mediaUrl.match(/\.(mp4|webm|ogg)$/i)" 
+                 [src]="post.mediaUrl" controls class="w-100 rounded mt-2"></video>
+        </div>
+        <button class="btn btn-dark" [routerLink]="['/blog', post.id]">
+  Read More
+</button>
+
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <button class="btn btn-outline-primary" (click)="likePost(post.id)">
+            👍 {{ post.likes || 0 }}
+          </button>
+          <button class="btn btn-outline-secondary" (click)="post.showComments = !post.showComments">
+            💬 {{ post.comments?.length || 0 }}
+          </button>
+        </div>
+        <!-- Comments -->
+        <div *ngIf="post.showComments" class="comments-section mt-3 px-3">
+          <div *ngFor="let comment of post.comments" class="comment border-bottom py-2">
+            <strong>{{ comment.author }}</strong>: {{ comment.text }}
+          </div>
+          <div class="mt-2">
+            <input [(ngModel)]="newComment[post.id]" 
+                   placeholder="Write a comment..." 
+                   class="form-control form-control-sm" />
+            <button class="btn btn-sm btn-dark mt-2" (click)="addComment(post.id)">
+              Add Comment
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    
+  </div>
 </div>
 
-    

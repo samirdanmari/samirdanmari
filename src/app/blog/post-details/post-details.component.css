@@ -1,0 +1,24 @@
+.post-detail {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.post-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.comments {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.comment {
+  font-size: 0.95rem;
+}

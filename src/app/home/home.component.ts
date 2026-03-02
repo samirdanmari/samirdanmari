@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup,UntypedFormControl,Form,Validators, } from '@angular/forms';
+import { CommonModule } from 'node_modules/@angular/common/types/_common_module-chunk';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
+    imports: [CommonModule],
     standalone: true,
 })
 export class HomeComponent implements OnInit {

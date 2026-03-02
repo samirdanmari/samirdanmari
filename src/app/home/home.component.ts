@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup,UntypedFormControl,Form,Validators, } from '@angular/forms';
-import { CommonModule } from 'node_modules/@angular/common/types/_common_module-chunk';
+import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',

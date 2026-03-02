@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterModule} from '@angular/router';
+import { from } from 'rxjs';
 @Component({
     selector: 'app-navigation',
     templateUrl: './navigation.component.html',
     styleUrls: ['./navigation.component.css'],
-    imports: [RouterOutlet, RouterLink],
+    imports: [CommonModule, RouterModule],
     standalone: true,
 })
 export class NavigationComponent implements OnInit {
